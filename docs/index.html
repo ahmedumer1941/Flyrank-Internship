@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Content Refresh Prioritization | ML Research Paper</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; max-width: 850px; margin: 0 auto; padding: 2rem; color: #222; }
+        h1, h2, h3 { color: #111; }
+        .abstract { background: #f4f4f5; padding: 1.5rem; border-left: 4px solid #0056b3; margin-bottom: 2rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.9rem; color: #555; }
+    </style>
+</head>
+<body>
+
+    <h1>Predictive Content Refresh Prioritization Using Search Performance Data</h1>
+    <p><strong>Author:</strong> Ahmed Umer | Machine Learning Intern</p>
+
+    <section class="abstract">
+        <h2>Abstract</h2>
+        <p>Maintaining high search visibility requires identifying content staleness before rank decay occurs. This study frames content refresh prioritization as a supervised binary classification task trained on anonymized search performance data. By leveraging technical SEO indicators and performance trends, our trained Random Forest model outperforms traditional rule-based baselines in precision and recall. These results demonstrate a viable decision-support framework for technical teams to maximize organic content efficiency. This actionable playbook establishes a scalable methodology for enterprise-level search optimization.</p>
+    </section>
+
+    <section>
+        <h2>1. Introduction & Problem Statement</h2>
+        <p>Search engine ranking degradation occurs naturally as content ages or user search intent shifts. Manual periodic audits are resource-intensive and often inefficient. This research develops a machine learning solution to automatically rank pages needing content intervention based on historical performance indicators.</p>
+    </section>
+
+    <section>
+        <h2>2. Data Release & Public-Safety Pass</h2>
+        <p>This project utilizes an anonymized slice of search performance data released by FlyRank. All raw URLs, domain identifiers, and client names were excluded to ensure public safety and privacy compliance.</p>
+    </section>
+
+    <section>
+        <h2>3. Methodology</h2>
+        <p>Features were selected around historical CTR variations, average search position, scroll rate, engagement rate, and traffic trend percentage. An 80/20 stratified holdout train/test split was enforced to prevent data leakage. Baseline performance was evaluated using standard industry hand-rules based on aggressive trend drops.</p>
+    </section>
+
+    <section>
+        <h2>4. Results vs. Baseline</h2>
+        <p>The machine learning classification model achieved near-perfect accuracy and recall on the test evaluation split compared to simple heuristic rule thresholds.</p>
+        <table>
+            <tr><th>Model</th><th>Precision (Class 1)</th><th>Recall (Class 1)</th><th>Accuracy</th></tr>
+            <tr><td>Hand-Rule Baseline</td><td>0.98</td><td>0.31</td><td>0.72</td></tr>
+            <tr><td><strong>Random Forest Model</strong></td><td><strong>1.00</strong></td><td><strong>1.00</strong></td><td><strong>1.00</strong></td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>5. Limitations & Honest Framing</h2>
+        <p>Findings reflect offline historical splits and should be viewed strictly as directional decision-support. Seasonal variations and external algorithmic updates may introduce false positives during live deployment.</p>
+    </section>
+
+    <section>
+        <h2>6. Ranked Recommendations</h2>
+        <ol>
+            <li><strong>High Impact / Low Effort:</strong> Batch refresh pages identified in the top precision queue.</li>
+            <li><strong>Medium Effort:</strong> Audit technical metadata and search intent matching on pages with sudden CTR drops.</li>
+            <li><strong>High Effort:</strong> Full structural rewrite for legacy content inactive for >18 months showing persistent negative position drift.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>7. Reproducibility</h2>
+        <p>All source code, analysis notebooks, and assets are fully reproducible and accessible at the <a href="https://github.com/ahmedumer1941/Flyrank-Internship">GitHub Repository</a>.</p>
+    </section>
+
+    <footer>
+        <p><strong>Acknowledgments & Data Credit:</strong> Built on the <a href="https://flyrank.ai" target="_blank">FlyRank ML Internship dataset</a>.</p>
+    </footer>
+
+</body>
+</html>
